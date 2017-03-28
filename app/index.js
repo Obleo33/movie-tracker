@@ -1,15 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import MovieIndex from './components/movieIndex';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, IndexRoute} from 'react-router';
+import { Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const history = createHistory();
+
+const middleware = routerMiddleware(history)
+
+const rootReducer = combineReducers({
+  router: routerReducer
+})
+
+const store = createStore(rootReducer, devTools, applyMiddleware(middleware))
 
 const router = (
-    <Router history={browserHistory} >
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieIndex} />
       </Route>
-    </Router>
+    </ConnectedRouter>
+  </Provider>
 )
 
 ReactDOM.render(router, document.getElementById('main'))
+
+
+
+// import AppContainer from './appContainer';
+// import './index.css';
+
+// import * as reducers from './reducers'
