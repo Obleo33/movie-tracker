@@ -10,7 +10,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getFilms: (films) => {
       dispatch(actions.getFilms(films))
-    }
+    },
+    fetchFilms: actions.fetchFilms()
   }
 }
 
