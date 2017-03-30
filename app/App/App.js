@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Movie Watcher v1</h1>
+        <h1 className="movie-header">MY FLICKSTER BOOK</h1>
         <Route exact path='/' component={NowShowingContainer}/>
       </div>
     )

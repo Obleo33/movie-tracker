@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+  font-family: 'Nosifer', cursive;
+
+  /*font-family: 'Josefin Sans', sans-serif;*/
+}
+
+
+.film-posters{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie-header{
+  text-align: center;
+  color: #A9A9A9;
+  font-weight: bold;
+}
