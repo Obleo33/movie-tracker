@@ -12,9 +12,22 @@ export const fetchFilms = () => {
 }
 
 export const getFilms = films => {
-  console.log(films);
   return {
     type: 'GET_FILMS',
     films
   }
 }
+
+export const login = login => {
+  return {
+    type: 'LOGIN',
+    login
+  }
+}
+
+export const loginFailed = error => {
+  return {
+    type: 'LOGIN_ERROR',
+    error
+  }
+};

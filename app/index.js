@@ -6,8 +6,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk'
 
-import AppContainer from './App/AppContainer';
-// import MovieIndex from './components/movieIndex';
+import AppContainer from './components/App/AppContainer';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from './reducers/index'
 
