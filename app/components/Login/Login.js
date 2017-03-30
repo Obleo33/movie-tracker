@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
+import './Login.css'
 
-
-default export class Login extends Component {
+ class Login extends Component {
   constructor(){
     super()
     this.state = {
-      userName: '',
       email: '',
+      password: ''
     }
   }
 
-  render (){
+  handleInput(e) {
+    console.log(e);
+  }
+
+  render () {
     return(
       <form>
-        <input type='text'></input>
-        <input type='text'></input>
+        <input type='email' placeholder='email'></input>
+        <input type='password' placeholder='password'></input>
         <button type='submit'></button>
       </form>
     )
   }
 }
+
+export default Login;

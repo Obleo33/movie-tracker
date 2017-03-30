@@ -9,6 +9,7 @@ import thunk from 'redux-thunk'
 import AppContainer from './components/App/AppContainer';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from './reducers/index'
+import LoginContainer from './components/Login/LoginContainer'
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
@@ -21,8 +22,7 @@ const store = createStore(rootReducer, devTools, applyMiddleware(...middleware))
 const router = (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route exact path='/' component={AppContainer}>
-      </Route>
+      <AppContainer/>
     </ConnectedRouter>
   </Provider>
 )
