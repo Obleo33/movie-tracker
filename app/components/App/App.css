@@ -1,0 +1,10 @@
+body {
+  background-color: aqua;
+  font-family: 'Poiret One', cursive;
+}
+
+.movie-header {
+  text-align: center;
+  color: #A9A9A9;
+  font-weight: bold;
+}
