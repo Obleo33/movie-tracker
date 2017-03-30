@@ -11,7 +11,7 @@ export default class App extends Component {
         return response.json()
       })
       .then((films) => {
-        // dispatch(actions.getFilms(films)
+        return this.props.getFilms(films)
       })
   }
 
