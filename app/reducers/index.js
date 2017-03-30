@@ -4,7 +4,7 @@ import { films } from './filmReducer'
 
 const rootReducer = combineReducers({
   router: routerReducer,
-  films,
+  films
 })
 
 export default rootReducer
