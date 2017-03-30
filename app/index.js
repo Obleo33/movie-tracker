@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import thunk from 'redux-thunk'
 
 import AppContainer from './App/AppContainer';
 // import MovieIndex from './components/movieIndex';
@@ -16,7 +17,7 @@ const history = createHistory();
 
 const middleware = routerMiddleware(history)
 
-const store = createStore(rootReducer, devTools, applyMiddleware(middleware))
+const store = createStore(rootReducer, devTools, applyMiddleware(thunk, middleware))
 
 const router = (
   <Provider store={store}>
