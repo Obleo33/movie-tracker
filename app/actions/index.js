@@ -30,4 +30,10 @@ export const loginFailed = error => {
     type: 'LOGIN_ERROR',
     error
   }
-};
+}
+
+export const logOut = () => {
+  return {
+    type: 'LOG_OUT'
+  }
+}

@@ -4,9 +4,12 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions';
 import Login from './Login';
 
+const mapStateToProps = (state) => {
+  return state;
+}
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actions, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
