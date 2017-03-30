@@ -29,10 +29,3 @@ const router = (
 )
 
 ReactDOM.render(router, document.getElementById('main'))
-
-
-
-// import AppContainer from './appContainer';
-// import './index.css';
-
-// import * as reducers from './reducers'
