@@ -37,3 +37,10 @@ export const logOut = () => {
     type: 'LOG_OUT'
   }
 }
+
+export const signup = signup => {
+  return {
+    type: 'SIGN_UP',
+    signup
+  }
+}

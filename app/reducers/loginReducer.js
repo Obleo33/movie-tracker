@@ -4,16 +4,16 @@ const initialState = {
   name: null
 }
 
-const login = (user = initialState , action) => {
+const login = (state = initialState , action) => {
   switch(action.type){
     case 'LOGIN':
-      return Object.assign({}, user, action.login)
+      return Object.assign({}, state, action.login)
     case 'LOGIN_ERROR':
-      return user
+      return state
     case 'LOG_OUT':
-      return Object.assign({}, user, initialState)
+      return Object.assign({}, state, initialState)
     default:
-      return user
+      return state
   }
 }
 

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
-import newUser from '../NewUser/NewUser.js'
-import * as actions from '../actions'
+import { bindActionCreators } from 'redux';
+
+import NewUser from './NewUser'
+import * as actions from '../../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,9 +11,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  }
+  return bindActionCreators(actions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(newUser)  
+export default connect(mapStateToProps, mapDispatchToProps)(NewUser)
