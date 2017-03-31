@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
     "dev-server": "webpack-dev-server --hot --inline --content-base --history-api-fallback",
-    "start": "npm build && node src/app.js"
+    "start": "npm build && node src/app.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.28.0",
+    "jest": "^19.0.2",
     "react-hot-loader": "^1.3.1",
     "style-loader": "^0.16.1",
     "webpack": "^1.14.0",

@@ -4,7 +4,7 @@ const initialState = {
   name: null
 }
 
-export const login = (user = initialState , action) => {
+const login = (user = initialState , action) => {
   switch(action.type){
     case 'LOGIN':
       return Object.assign({}, user, action.login)
@@ -16,3 +16,5 @@ export const login = (user = initialState , action) => {
       return user
   }
 }
+
+export default login;
