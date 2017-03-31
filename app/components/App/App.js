@@ -6,10 +6,10 @@ import LoginContainer from '../Login/LoginContainer'
 
 class App extends Component {
 
-  componentDidMount() {
+  componentDidMount(dispatch) {
     this.props.fetchFilms()
   }
-  
+
   render() {
     return (
       <div>

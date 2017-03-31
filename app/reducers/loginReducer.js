@@ -1,20 +1,19 @@
 const initialState = {
-  email: '',
+  email: null,
   id: null,
-  name: null
+  name: null,
+  loggedIn: false
 }
 
-const login = (user = initialState , action) => {
+export const user = (state = initialState, action) => {
   switch(action.type){
     case 'LOGIN':
-      return Object.assign({}, user, action.login)
+      return Object.assign({}, state, action.user, { loggedIn: true })
     case 'LOGIN_ERROR':
-      return user
+      return state
     case 'LOG_OUT':
-      return Object.assign({}, user, initialState)
+      return Object.assign({}, state, initialState)
     default:
-      return user
+      return state
   }
 }
-
-export default login;
