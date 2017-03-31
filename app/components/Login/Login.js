@@ -24,7 +24,7 @@ class Login extends Component {
       <form>
         <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
         <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-        <button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
+        <Link to='./'><button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button></Link>
       </form>
     )
   }
