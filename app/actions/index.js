@@ -18,10 +18,10 @@ export const getFilms = films => {
   }
 }
 
-export const login = login => {
+export const login = user => {
   return {
     type: 'LOGIN',
-    login
+    user
   }
 }
 

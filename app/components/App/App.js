@@ -7,7 +7,7 @@ import NewUserContainer from '../NewUser/NewUserContainer'
 
 class App extends Component {
 
-  componentDidMount() {
+  componentDidMount(dispatch) {
     this.props.fetchFilms()
   }
 
