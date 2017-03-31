@@ -3,10 +3,6 @@ import './NowShowing.css'
 
 class NowShowing extends Component {
 
-  componentDidMount() {
-    this.props.fetchFilms()
-  }
-
   render() {
     return(
       <div className="film-container">
