@@ -4,15 +4,15 @@ const initialState = {
   name: null
 }
 
-export const login = (state = {}, action) => {
+export const login = (user = initialState , action) => {
   switch(action.type){
     case 'LOGIN':
-      return state
+      return Object.assign({}, user, action.login)
     case 'LOGIN_ERROR':
-      return state
+      return user
     case 'LOG_OUT':
-      return initialState
+      return Object.assign({}, user, initialState)
     default:
-      return state
+      return user
   }
 }
