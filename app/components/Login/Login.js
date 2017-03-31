@@ -63,20 +63,24 @@ class Login extends Component {
 
   render () {
     return(
-      <div>
-        <h3>Login</h3>
-        <form className='user-login'>
-          <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
-          <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-          <button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
-        </form>
-        <h3>New to our site?</h3>
-          <form className="new-user-form">
-            <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='name' placeholder='name'></input>
+      <div className="login-container">
+        <div className="user-login">
+          <h3>Login</h3>
+          <form className='user-form'>
             <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
             <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-            <button onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
+            <button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
           </form>
+        </div>
+        <div className="newuser-signup">
+          <h3 >New user signup</h3>
+            <form className="new-user-form">
+              <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='name' placeholder='name'></input>
+              <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+              <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
+              <button onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
+            </form>
+        </div>
       </div>
     )
   }
