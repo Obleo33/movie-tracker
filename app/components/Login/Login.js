@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Login.css'
 
 class Login extends Component {
@@ -10,6 +11,11 @@ class Login extends Component {
       password: '',
       error: ''
     }
+  }
+
+  validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email)
   }
 
   submitLogin(e) {
@@ -47,40 +53,18 @@ class Login extends Component {
     })
   }
 
-  newUser (e){
-    e.preventDefault()
 
-    const { login, loginFailed, logOut } = this.props;
-    const { email, password, name, id } = this.state;
-
-    fetch('http://localhost:3000/api/users/new', {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ name, email, password})
-    })
-
-  }
 
   render () {
     return(
-      <div className="login-container">
-        <div className="user-login">
-          <h3>Login</h3>
-          <form className='user-form'>
-            <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
-            <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-            <button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
-          </form>
-        </div>
-        <div className="newuser-signup">
-          <h3 >New user signup</h3>
-            <form className="new-user-form">
-              <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='name' placeholder='name'></input>
-              <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
-              <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-              <button onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
-            </form>
-        </div>
+      <div className='user-login'>
+        <h3>Login</h3>
+        <form className='user-form'>
+          <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+          <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
+          <button onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
+        </form>
+        <Link to='/new-user'>Sign-Up</Link>
       </div>
     )
   }
