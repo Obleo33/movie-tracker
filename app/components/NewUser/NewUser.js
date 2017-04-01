@@ -31,6 +31,14 @@ class NewUser extends Component {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email, password})
       })
+<<<<<<< HEAD
+//
+
+  // )
+      // .catch(error => {
+      //   console.log('poop');
+      // })
+=======
       .then( response => {
         console.log(response);
         if(!response.ok) {
@@ -47,6 +55,7 @@ class NewUser extends Component {
           })
         }
       })
+>>>>>>> 16770ade1e8df17e6e6ade856083093e67efb84c
     }
 
     this.setState({

@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div>
+
         <header>
           <h1 className="movie-header">MY FLICKSTER BOOK</h1>
           {this.userInfo()}

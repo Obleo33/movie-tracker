@@ -1,10 +1,16 @@
 body {
-  background-color: aqua;
+  /*background-color: aqua;*/
   font-family: 'Poiret One', cursive;
+  background-image: url('https://cdn.shutterstock.com/shutterstock/videos/14663869/thumb/1.jpg?i10c=img.resize(height:160)');
 }
 
 .movie-header {
   text-align: center;
   color: dimgray;
+  font-weight: bold;
+}
+
+.login-link{
+  color: white;
   font-weight: bold;
 }
