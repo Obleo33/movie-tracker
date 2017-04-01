@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class NewUser extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class NewUser extends Component {
   render () {
     return(
       <div className="newuser-signup">
+        <Link to='/'>Main</Link>
         <h3>New user signup</h3>
         <form className="new-user-form">
           <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>

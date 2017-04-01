@@ -58,6 +58,7 @@ class Login extends Component {
   render () {
     return(
       <div className='user-login'>
+        <Link to='/'>Main</Link>
         <h3>Login</h3>
         <form className='user-form'>
           <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>

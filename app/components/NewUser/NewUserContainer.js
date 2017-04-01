@@ -5,9 +5,7 @@ import NewUser from './NewUser'
 import * as actions from '../../actions';
 
 const mapStateToProps = (state) => {
-  return {
-    state
-  }
+  return state
 }
 
 const mapDispatchToProps = (dispatch) => {
