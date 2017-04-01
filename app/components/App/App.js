@@ -4,6 +4,7 @@ import NowShowingContainer from '../NowShowing/NowShowingContainer'
 import './App.css'
 import LoginContainer from '../Login/LoginContainer'
 import NewUserContainer from '../NewUser/NewUserContainer'
+import FavoritesContainer from '../Favorites/FavoritesContainer'
 
 class App extends Component {
 
@@ -31,11 +32,13 @@ class App extends Component {
           {this.userInfo()}
           <nav>
             <NavLink to='/login'>Login</NavLink>
+            <NavLink to='/favorites'>Favorites</NavLink>
           </nav>
         </header>
         <Route exact path='/' component={ NowShowingContainer }/>
         <Route path='/login' render= { ({ match, location, history}) => <LoginContainer history={history} /> }/>
         <Route exact path='/new-user' render= { ({ match, location, history}) => <NewUserContainer history={history} /> }/>
+        <Route exact path='/favorites' component={ FavoritesContainer } />
       </div>
     )
   }

@@ -11,14 +11,11 @@ export const fetchFilms = () => {
   }
 }
 
-// export const fetchFavorites = (favorites) => {
-//   favorites.map(()=>{
-//     return dispatch => {
-//
-//   })
-//
-//   }
-// }
+export const fetchFavorites = (id) => {
+  return dispatch => {
+    fetch(`http://localhost:3000/api/users/${id}/favorites`).then(response => console.log(response)
+  )}
+}
 
 //Films reducer
 export const getFilms = films => {
@@ -62,20 +59,20 @@ export const signup = signup => {
 export const addFavorite= addFavorite => {
   return {
     type: 'ADD_FAVORITE',
-    signup
+    favorites
   }
 }
 
 export const removeFavorite = removeFavorite => {
   return {
     type: 'REMOVE_FAVORITE',
-    signup
+    favorites
   }
 }
 
 export const getFavorites = getFavorites => {
   return {
     type: 'GET_FAVORITES',
-    signup
+    favorites
   }
 }

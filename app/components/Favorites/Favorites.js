@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import './Favorties.css'
+import './Favorites.css'
 
-class Favorties extends Component {
+class Favorites extends Component {
+
+componentDidMount() {
+  this.props.fetchFavorites(this.props.user.id)
+}
 
   render() {
     return(
-      <div className="film-container">
-        {this.props.films.map(film  => {
-          return (
-            <div className='film-card' key={film.id} ref={film.id}>
-              <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}/>
-            </div>
-          )
-        })}
+      <div className="favorite-container">
+      
       </div>
     )
   }
 }
 
-export default Favorties;
+export default Favorites;
