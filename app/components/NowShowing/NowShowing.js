@@ -5,7 +5,6 @@ class NowShowing extends Component {
 
   onClick(filmData) {
     if(this.props.user.loggedIn) {
-      console.log(filmData);
       fetch(`http://localhost:3000/api/users/favorites/new`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
