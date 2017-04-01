@@ -11,6 +11,16 @@ export const fetchFilms = () => {
   }
 }
 
+// export const fetchFavorites = (favorites) => {
+//   favorites.map(()=>{
+//     return dispatch => {
+//
+//   })
+//
+//   }
+// }
+
+//Films reducer
 export const getFilms = films => {
   return {
     type: 'GET_FILMS',
@@ -18,6 +28,8 @@ export const getFilms = films => {
   }
 }
 
+
+//Login_Signup reducers
 export const login = user => {
   return {
     type: 'LOGIN',
@@ -41,6 +53,29 @@ export const logOut = () => {
 export const signup = signup => {
   return {
     type: 'SIGN_UP',
+    signup
+  }
+}
+
+//Favorite reducers
+
+export const addFavorite= addFavorite => {
+  return {
+    type: 'ADD_FAVORITE',
+    signup
+  }
+}
+
+export const removeFavorite = removeFavorite => {
+  return {
+    type: 'REMOVE_FAVORITE',
+    signup
+  }
+}
+
+export const getFavorites = getFavorites => {
+  return {
+    type: 'GET_FAVORITES',
     signup
   }
 }

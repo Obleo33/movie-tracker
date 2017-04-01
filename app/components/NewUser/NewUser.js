@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class NewUser extends Component {
   constructor() {
@@ -23,7 +24,6 @@ class NewUser extends Component {
     const { email, password, name, id } = this.state;
 
     if(!this.validateEmail(email)) {
-      throw Error('Invalid Email');
       return this.setState({error: 'Please Enter A Valid Email'})
     } else {
       fetch('http://localhost:3000/api/users/new', {
@@ -31,12 +31,31 @@ class NewUser extends Component {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email, password})
       })
+<<<<<<< HEAD
 //
 
   // )
       // .catch(error => {
       //   console.log('poop');
       // })
+=======
+      .then( response => {
+        console.log(response);
+        if(!response.ok) {
+          this.setState({ error: 'Email already exist'})
+        } else {
+          fetch('http://localhost:3000/api/users', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ email, password })
+          })
+          .then( response => {
+            response.json().then(user => login(user.data));
+            this.props.history.push('/');
+          })
+        }
+      })
+>>>>>>> 16770ade1e8df17e6e6ade856083093e67efb84c
     }
 
     this.setState({
@@ -50,10 +69,12 @@ class NewUser extends Component {
   render () {
     return(
       <div className="newuser-signup">
+        <Link to='/'>Main</Link>
         <h3>New user signup</h3>
         <form className="new-user-form">
           <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>
           <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+          <p className='errorMessage'>{this.state.error}</p>
           <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
           <button onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
         </form>
