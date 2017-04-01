@@ -33,14 +33,19 @@ class NewUser extends Component {
       })
       .then( response => {
         console.log(response);
-        if(response.status === 500) {
+        if(!response.ok) {
           this.setState({ error: 'Email already exist'})
+        } else {
+          fetch('http://localhost:3000/api/users', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ email, password })
+          })
+          .then( response => {
+            response.json().then(user => login(user.data));
+            this.props.history.push('/');
+          })
         }
-      }
-
-      )
-      .catch(error => {
-        console.log('poop');
       })
     }
 
