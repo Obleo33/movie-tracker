@@ -23,7 +23,6 @@ class NewUser extends Component {
     const { email, password, name, id } = this.state;
 
     if(!this.validateEmail(email)) {
-      throw Error('Invalid Email');
       return this.setState({error: 'Please Enter A Valid Email'})
     } else {
       fetch('http://localhost:3000/api/users/new', {
@@ -31,8 +30,13 @@ class NewUser extends Component {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email, password})
       })
-      .then(
-        
+      .then( response => {
+        console.log(response);
+        if(response.status === 500) {
+          this.setState({ error: 'Email already exist'})
+        }
+      }
+
       )
       .catch(error => {
         console.log('poop');
@@ -54,6 +58,7 @@ class NewUser extends Component {
         <form className="new-user-form">
           <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>
           <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+          <p className='errorMessage'>{this.state.error}</p>
           <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
           <button onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
         </form>
