@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
-import Favorties from './Favorties';
+import Favorites from './Favorites';
 
 const mapStateToProps = (state) => {
   return state;
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorties);
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
