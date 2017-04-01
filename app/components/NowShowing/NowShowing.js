@@ -10,6 +10,7 @@ class NowShowing extends Component {
           return (
             <div className='film-card' key={film.id} ref={film.id}>
               <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}/>
+              <button className="favorite-button">Favorite</button>
             </div>
           )
         })}

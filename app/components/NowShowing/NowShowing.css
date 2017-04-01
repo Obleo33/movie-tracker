@@ -3,3 +3,28 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.favorite-button{
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  width: 120px;
+  padding: 5px;
+  font-family: 'Poiret One', cursive;
+}
+
+.film-card{
+  text-align: center;
+  padding: 10px;
+}
+
+.film-card button{
+  margin: auto;
+}
+
+.film-card img{
+  margin: 10px 0px;
+}

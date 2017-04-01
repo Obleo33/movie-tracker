@@ -31,12 +31,12 @@ class NewUser extends Component {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email, password})
       })
-      .then(
-        
-      )
-      .catch(error => {
-        console.log('poop');
-      })
+//
+
+  // )
+      // .catch(error => {
+      //   console.log('poop');
+      // })
     }
 
     this.setState({
