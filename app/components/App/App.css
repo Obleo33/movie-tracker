@@ -15,3 +15,7 @@ body {
   color: white;
   font-weight: bold;
 }
+
+.navlink {
+  margin: 10px;
+}

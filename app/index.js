@@ -16,7 +16,7 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
 
 const history = createHistory();
 
-const middleware = [routerMiddleware(history), logger, thunk]
+const middleware = [routerMiddleware(history), thunk] //logger
 
 const store = createStore(rootReducer, devTools, applyMiddleware(...middleware))
 

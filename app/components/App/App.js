@@ -31,8 +31,8 @@ class App extends Component {
           <h1 className="movie-header">MY FLICKSTER BOOK</h1>
           {this.userInfo()}
           <nav>
-            <NavLink to='/login'>Login</NavLink>
-            <NavLink to='/favorites'>Favorites</NavLink>
+            <NavLink className='login-link navlink' to='/login'>Login</NavLink>
+            <NavLink className='favorites-link navlink' to='/favorites'>Favorites</NavLink>
           </nav>
         </header>
         <Route exact path='/' component={ NowShowingContainer }/>

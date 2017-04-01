@@ -9,8 +9,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchFavorites: () => {
-      dispatch(actions.fetchFavorites())
+    fetchFavorites: (userId) => {
+      dispatch(actions.fetchFavorites(userId))
     }
   }
 }

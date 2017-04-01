@@ -3,11 +3,13 @@ import { routerReducer } from 'react-router-redux'
 
 import { films } from './getFilmsReducer'
 import { user } from './loginReducer'
+import { favorites } from './favoritesReducer'
 
 const rootReducer = combineReducers({
   router: routerReducer,
   films,
-  user
+  user,
+  favorites
 })
 
 export default rootReducer
