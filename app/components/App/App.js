@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, NavLink } from 'react-router-dom';
 import NowShowingContainer from '../NowShowing/NowShowingContainer'
-import './App.css'
 import LoginContainer from '../Login/LoginContainer'
 import NewUserContainer from '../NewUser/NewUserContainer'
 import FavoritesContainer from '../Favorites/FavoritesContainer'
