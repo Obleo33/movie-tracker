@@ -1,10 +1,10 @@
 import loginReducer from '../../reducers/loginReducer'
 
-
 const initialState = {
-  email: '',
+  email: null,
   id: null,
-  name: null
+  name: null,
+  loggedIn: false
 }
 
 describe('loginReducer', () => {
@@ -14,7 +14,7 @@ it('should return inital state by default', () => {
 })
 
 it('should return a user object when the action is login', () => {
-  const user = { id: 1, name: 'Bob', email: 'foo@bar.com'};
+  const user = { id: 1, name: 'Bob', email: 'foo@bar.com', loggedIn: true};
 
   expect(loginReducer(undefined, {
     type: 'LOGIN',
@@ -22,8 +22,5 @@ it('should return a user object when the action is login', () => {
   })).toEqual(user);
 })
 
-// it.skip('should return initialState when the action is login error', () => {
-//
-// })
 
 })

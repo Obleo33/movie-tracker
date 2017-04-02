@@ -5,7 +5,7 @@ const initialState = {
   loggedIn: false
 }
 
-export const user = (state = initialState, action) => {
+ export const user = (state = initialState, action) => {
   switch(action.type){
     case 'LOGIN':
       return Object.assign({}, state, action.user, { loggedIn: true })
