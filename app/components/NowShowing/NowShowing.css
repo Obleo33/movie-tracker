@@ -1,31 +1,30 @@
 .film-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : space-around;
 }
 
-.favorite-button{
-  font-size: 15px;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 10px;
-  width: 120px;
-  padding: 5px;
-  font-family: 'Poiret One', cursive;
+.film-card {
+  padding    : 10px;
+  text-align : center;
 }
 
-.film-card{
-  text-align: center;
-  padding: 10px;
+.film-card button {
+  margin : auto;
 }
 
-.film-card button{
-  margin: auto;
+.film-card img {
+  width      : 200px;
+  margin     : 10px 0px;
+  transition : all .5s ease-in-out;
 }
 
-.film-card img{
-  margin: 10px 0px;
-  width: 200px;
+.film-card img:hover {
+  transform  : scale(1.05);
+  transition : all .5s ease-in-out;
+}
+
+.nowshowing-container nav {
+  margin     : 20px;
+  text-align : center;
 }
