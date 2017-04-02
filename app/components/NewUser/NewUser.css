@@ -7,13 +7,13 @@
   text-align : center;
 }
 
-.newuser form {
+.new-user-form {
   display        : flex;
   align-items    : center;
   flex-direction : column;
 }
 
-.newuser form input {
+.new-user-form input {
   width  : 200px;
   margin : 10px 0;
 }

@@ -8,6 +8,13 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
 import './reset.css'
+import './components/App/App.css'
+import './components/Favorites/Favorites.css'
+import './components/Login/Login.css'
+import './components/NewUser/NewUser.css'
+import './components/NowShowing/NowShowing.css'
+
+
 import AppContainer from './components/App/AppContainer';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from './reducers/index'

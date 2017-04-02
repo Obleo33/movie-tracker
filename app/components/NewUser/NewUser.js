@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './NewUser.css'
 
 class NewUser extends Component {
   constructor() {
@@ -18,9 +17,7 @@ class NewUser extends Component {
     return re.test(email)
   }
 
-  newUser (e){
-    e.preventDefault()
-
+  newUser (){
     const { login, loginFailed, logOut } = this.props;
     const { email, password, name, id } = this.state;
 
@@ -68,13 +65,13 @@ class NewUser extends Component {
           <Link className='favorites-link navlink' to='/'>Main</Link>
         </nav>
         <h3>NEW USER SIGN-UP</h3>
-        <form className="new-user-form">
+        <div className="new-user-form">
           <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>
           <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
           <p className='errorMessage'>{this.state.error}</p>
           <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
           <button className='button' onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
-        </form>
+        </div>
       </div>
     )
   }
