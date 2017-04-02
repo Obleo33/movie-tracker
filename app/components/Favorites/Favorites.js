@@ -25,7 +25,9 @@ removeFavorite(userId, filmId) {
     const { favorites } = this.props
     return(
       <div className="favorite-container">
-        <Link to='/'>Main</Link>
+        <nav>
+          <Link className='main-link navlink' to='/'>Main</Link>
+        </nav>
         { favorites.length ?
           favorites.map(film => {
             return (
@@ -35,7 +37,7 @@ removeFavorite(userId, filmId) {
                   <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}/>
                   <article className='film-overview'>{film.overview}</article>
                 </div>
-                <button onClick={ ()=> this.removeFavorite(this.props.user.id, film.movie_id) } className='remove-favorite'>Remove Favorite</button>
+                <button onClick={ ()=> this.removeFavorite(this.props.user.id, film.movie_id) } className='remove-favorite button'>UNFAVORITE</button>
               </div>
             )
           }) : null }

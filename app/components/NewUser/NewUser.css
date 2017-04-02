@@ -1,0 +1,19 @@
+.newuser {
+  text-align : center;
+}
+
+.newuser nav {
+  margin     : 20px;
+  text-align : center;
+}
+
+.newuser form {
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+}
+
+.newuser form input {
+  width  : 200px;
+  margin : 10px 0;
+}
