@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './Login.css'
+
 
 class Login extends Component {
   constructor(){
@@ -18,9 +18,7 @@ class Login extends Component {
     return re.test(email)
   }
 
-  submitLogin(e) {
-    e.preventDefault()
-
+  submitLogin() {
     const { login, loginFailed, logOut } = this.props;
     const { email, password } = this.state;
 
@@ -69,11 +67,11 @@ class Login extends Component {
           <Link className='favorites-link navlink' to='/'>Main</Link>
         </nav>
         <h3>LOGIN</h3>
-        <form className='user-form'>
-          <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
-          <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
+        <div className='user-form'>
+          <input name='email' value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+          <input name='password' value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
           <button className='submit-button button' onClick={this.submitLogin.bind(this)} type='submit'>Submit Button</button>
-        </form>
+        </div>
         <Link className='signup-link navlink' to='/new-user'>Sign-Up</Link>
       </div>
     )
