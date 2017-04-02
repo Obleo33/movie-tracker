@@ -37,7 +37,10 @@ class Login extends Component {
         throw Error('error message');
       }
       else {
-        response.json().then(user => login(user.data));
+        response.json().then(user => {
+          login(user.data)
+          this.props.fetchFavorites(user.data.id)
+        });
         this.props.history.push('/');
       }
     })
