@@ -24,6 +24,9 @@ class Login extends Component {
     const { login, loginFailed, logOut } = this.props;
     const { email, password } = this.state;
 
+    if(!this.validateEmail(email)) {
+      return this.setState({error: 'Please Enter A Valid Email'})
+    } else {
     fetch('http://localhost:3000/api/users', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -55,6 +58,7 @@ class Login extends Component {
       error: ''
     })
   }
+}
 
 
 
