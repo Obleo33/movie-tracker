@@ -1,4 +1,5 @@
 import loginReducer from '../../reducers/loginReducer'
+import { combineReducers } from "redux"
 
 const initialState = {
   email: null,
