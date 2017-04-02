@@ -15,11 +15,16 @@ class App extends Component {
   userInfo() {
     if(!this.props.user.loggedIn){
       return (
-        <div className='loggedIn'>Please login to add Favorites</div>
+        <div className='loggedIn'>Please
+          <NavLink className='login-link navlink' to='/login'>LOGIN</NavLink>
+          to add Favorites
+        </div>
       )
     }
     return (
-      <div className='loggedIn'>Logged in as {this.props.user.name}</div>
+      <div className='loggedIn'>Logged in as {this.props.user.name}
+        <button className='logout-button' onClick={() => this.logOut()}>LOG-OUT</button>
+      </div>
     )
   }
 
@@ -29,26 +34,12 @@ class App extends Component {
     this.props.history.push('/')
   }
 
-  loggedIn() {
-    if(this.props.user.loggedIn) {
-      return (
-        <nav>
-          <button className='logout-button' onClick={() => this.logOut()}>Logout</button>
-          <NavLink className='favorites-link navlink' to='/favorites'>Favorites</NavLink>
-        </nav>
-      )
-    }
-    return <NavLink className='login-link navlink' to='/login'>Login</NavLink>
-  }
-
   render() {
     return (
       <div>
-
-        <header>
-          <h1 className="movie-header">MY FLICKSTER BOOK</h1>
+        <header className="app-header">
           {this.userInfo()}
-          {this.loggedIn()}
+          <h1>MY FLICKSTER BOOK</h1>
         </header>
         <Route exact path='/' component={ NowShowingContainer }/>
         <Route path='/login' render= { ({ match, location, history}) => <LoginContainer history={history} /> }/>

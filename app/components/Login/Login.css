@@ -1,1 +1,23 @@
+.user-login {
+  text-align : center;
+}
 
+.user-login nav {
+  margin     : 20px;
+  text-align : center;
+}
+
+.user-login form {
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+}
+
+.user-login form input {
+  width  : 200px;
+  margin : 10px 0;
+}
+
+.submit-button {
+  text-align : center;
+}
