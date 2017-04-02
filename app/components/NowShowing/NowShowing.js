@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
+
+
 import './NowShowing.css'
 
 class NowShowing extends Component {
 
   onClick(filmData) {
     if(this.props.user.loggedIn) {
-      fetch(`http://localhost:3000/api/users/favorites/new`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify( filmData )
-      })
-
+      const favFilms = this.props.favorites.map(film => film.movie_id)
+      favFilms.includes(filmData.movie_id)? null: this.addFavorite(filmData)
+    } else {
+      this.props.history.push('/login');
     }
+  }
+
+  addFavorite(filmData){
+    fetch(`http://localhost:3000/api/users/favorites/new`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify( filmData )
+    }).then(this.props.fetchFavorites(this.props.user.id))
   }
 
 
@@ -42,6 +50,3 @@ class NowShowing extends Component {
 }
 
 export default NowShowing;
-
-
-//https://api.themoviedb.org/3/movie/{film.id}?api_key=9b896459c611dec3ec7899adad9da8ec

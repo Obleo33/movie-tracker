@@ -42,7 +42,10 @@ class NewUser extends Component {
             body: JSON.stringify({ email, password })
           })
           .then( response => {
-            response.json().then(user => login(user.data));
+            response.json().then(user => {
+              login(user.data)
+              this.props.fetchFavorites(user.data.id)
+            });
             this.props.history.push('/');
           })
         }
