@@ -14,7 +14,8 @@ describe('Favorite Reducer', () => {
     }
   }
 
-  const LoginComponent = shallow(<Login user={ mockUser.data }
+  const LoginComponent = shallow(<Login history={browserHistory}
+                                        user={ mockUser.data }
                                         login={jest.fn()}
                                         loginFailed={jest.fn()}
                                         logOut={jest.fn()} />)
@@ -42,40 +43,43 @@ describe('Favorite Reducer', () => {
     await LoginComponent.update();
 
     let expectedErrorMessage = 'Please Enter A Valid Email'
-    let errorElement = LoginComponent.find('.errorMessage')
 
     expect(LoginComponent.state().error).toEqual(expectedErrorMessage)
-    expect(errorElement.length).toEqual(1)
-    expect(errorElement.text()).toEqual(expectedErrorMessage)
 
     done()
   })
 
-  // xit('redirects to dashboard on successful login', async (done) => {
-  //   spyOn(browserHistory, 'push')
-  //
-  //   fetchMock.post('http://localhost:3001/authenticate', {
-  //     status: 200,
-  //     ok: true,
-  //     body: mockUser
-  //   })
-  //
-  //   let emailInput = Login.find('input[name="email"]')
-  //   let submitButton = Login.find('button')
-  //
-  //   emailInput.simulate('change', {
-  //     target: {
-  //       name: 'email',
-  //       value: 'foo@bar.com'
-  //     }
-  //   })
-  //
-  //   submitButton.simulate('click')
-  //
-  //   await Login.update();
-  //
-  //   expect(browserHistory.push).toHaveBeenCalledWith('/dashboard')
-  //
-  //   done();
-  // })
+  it('redirects to dashboard on successful login', async () => {
+    spyOn(browserHistory, 'push')
+
+    fetchMock.post('http://localhost:3001/authenticate', {
+      status: 200,
+      ok: true,
+      body: mockUser
+    })
+
+    let emailInput = LoginComponent.find('input[name="email"]')
+    let passwordInput = LoginComponent.find('input[name="password"]')
+    let submitButton = LoginComponent.find('.submit-button')
+
+    emailInput.simulate('change', {
+      target: {
+        name: 'email',
+        value: 'foo@bar.com'
+      }
+    })
+
+    passwordInput.simulate('change', {
+      target: {
+        name: 'password',
+        value: 'baz'
+      }
+    })
+
+    submitButton.simulate('click')
+
+    await Login.update();
+
+    expect(browserHistory.push).toHaveBeenCalledWith('/')
+  })
 })
