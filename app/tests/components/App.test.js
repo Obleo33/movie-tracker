@@ -1,5 +1,16 @@
-describe('Favorite Reducer', () => {
+import React from 'react'
+import { shallow } from 'enzyme'
+import fetchMock from 'fetch-mock'
+import App from '../../components/App/App.js'
 
-  it.skip('test should go here', () => {
-  })
+
+
+describe('App', () => {
+
+const wrapper = shallow(<App/>)
+
+('it should have four routes', () => {
+  expect(wrapper.find('Route').length).toBe(4)
+})
+
 })
