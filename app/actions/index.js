@@ -12,13 +12,14 @@ export const fetchFilms = () => {
 }
 
 export const fetchFavorites = (userId) => {
-  return dispatch => {
-    fetch(`http://localhost:3000/api/users/${userId}/favorites`)
-      .then((response) => response.json())
-      .then((userFav) => {
-        dispatch(getFavorites(userFav.data))
-      })
-  }
+
+    return dispatch => {
+      fetch(`http://localhost:3000/api/users/${userId}/favorites`)
+        .then((response) => response.json())
+        .then((userFav) => {
+          dispatch(getFavorites(userFav.data))
+        })
+    }
 }
 
 
@@ -61,23 +62,15 @@ export const signup = signup => {
 
 //Favorite reducers
 
-export const addFavorite= addFavorite => {
-  return {
-    type: 'ADD_FAVORITE',
-    favorites
-  }
-}
-
-export const removeFavorite = userFav => {
-  return {
-    type: 'REMOVE_FAVORITE',
-    userFav
-  }
-}
-
 export const getFavorites = userFav => {
   return {
     type: 'GET_FAVORITES',
     userFav
+  }
+}
+
+export const resetFavorites = () => {
+  return {
+    type: 'RESET_FAVORITES',
   }
 }

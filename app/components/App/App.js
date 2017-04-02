@@ -8,7 +8,7 @@ import FavoritesContainer from '../Favorites/FavoritesContainer'
 
 class App extends Component {
 
-  componentDidMount(dispatch) {
+  componentWillMount(dispatch) {
     this.props.fetchFilms()
   }
 
@@ -23,6 +23,24 @@ class App extends Component {
     )
   }
 
+  logOut() {
+    this.props.logOut()
+    this.props.resetFavorites()
+    this.props.history.push('/')
+  }
+
+  loggedIn() {
+    if(this.props.user.loggedIn) {
+      return (
+        <nav>
+          <button className='logout-button' onClick={() => this.logOut()}>Logout</button>
+          <NavLink className='favorites-link navlink' to='/favorites'>Favorites</NavLink>
+        </nav>
+      )
+    }
+    return <NavLink className='login-link navlink' to='/login'>Login</NavLink>
+  }
+
   render() {
     return (
       <div>
@@ -30,10 +48,7 @@ class App extends Component {
         <header>
           <h1 className="movie-header">MY FLICKSTER BOOK</h1>
           {this.userInfo()}
-          <nav>
-            <NavLink className='login-link navlink' to='/login'>Login</NavLink>
-            <NavLink className='favorites-link navlink' to='/favorites'>Favorites</NavLink>
-          </nav>
+          {this.loggedIn()}
         </header>
         <Route exact path='/' component={ NowShowingContainer }/>
         <Route path='/login' render= { ({ match, location, history}) => <LoginContainer history={history} /> }/>
