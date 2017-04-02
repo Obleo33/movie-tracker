@@ -3,8 +3,6 @@ import * as actions from '../../actions'
 import NowShowing from './NowShowing'
 import { bindActionCreators } from 'redux';
 
-
-
 const mapStateToProps = state => state
 
 const mapDispatchToProps = dispatch => {
