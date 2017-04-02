@@ -1,5 +1,6 @@
 .fav-card img{
-  width: 100px;
+  margin: 10px 0px;
+  width: 200px;
 }
 
 
@@ -15,12 +16,6 @@
   font-family: 'Poiret One', cursive;
   margin-top: 5px;
 }
-
-.film-card img{
-  margin: 10px 0px;
-  width: 200px;
-}
-
 
 .film-container {
   display: flex;

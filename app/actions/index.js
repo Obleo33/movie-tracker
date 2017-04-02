@@ -21,6 +21,7 @@ export const fetchFavorites = (userId) => {
   }
 }
 
+
 //Films reducer
 export const getFilms = films => {
   return {
@@ -67,10 +68,10 @@ export const addFavorite= addFavorite => {
   }
 }
 
-export const removeFavorite = removeFavorite => {
+export const removeFavorite = userFav => {
   return {
     type: 'REMOVE_FAVORITE',
-    favorites
+    userFav
   }
 }
 
