@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, NavLink } from 'react-router-dom';
 
-import './NowShowing.css'
-
 class NowShowing extends Component {
 
   onClick(filmData) {

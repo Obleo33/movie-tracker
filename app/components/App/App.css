@@ -21,6 +21,7 @@ body {
 .app-header h1 {
   font-size   : 40px;
   font-weight : 900;
+  margin      : 30px 10px 0 10px;
 }
 
 .login-link {

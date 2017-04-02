@@ -7,13 +7,13 @@
   text-align : center;
 }
 
-.user-login form {
+.user-form {
   display        : flex;
   align-items    : center;
   flex-direction : column;
 }
 
-.user-login form input {
+.user-form input {
   width  : 200px;
   margin : 10px 0;
 }
