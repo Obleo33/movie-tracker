@@ -1,4 +1,3 @@
-
 export const fetchFilms = () => {
   return dispatch => {
     fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=9b896459c611dec3ec7899adad9da8ec')
@@ -13,13 +12,13 @@ export const fetchFilms = () => {
 
 export const fetchFavorites = (userId) => {
 
-    return dispatch => {
-      fetch(`http://localhost:3000/api/users/${userId}/favorites`)
-        .then((response) => response.json())
-        .then((userFav) => {
-          dispatch(getFavorites(userFav.data))
-        })
-    }
+  return dispatch => {
+    fetch(`http://localhost:3000/api/users/${userId}/favorites`)
+    .then((response) => response.json())
+    .then((userFav) => {
+      dispatch(getFavorites(userFav.data))
+    })
+  }
 }
 
 

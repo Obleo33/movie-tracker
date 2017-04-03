@@ -18,8 +18,8 @@ class NewUser extends Component {
   }
 
   newUser (){
-    const { login, loginFailed, logOut } = this.props;
-    const { email, password, name, id } = this.state;
+    const { login, loginFailed, logOut } = this.props
+    const { email, password, name, id } = this.state
 
     if(!this.validateEmail(email)) {
       return this.setState({error: 'Please Enter A Valid Email'})
@@ -30,7 +30,7 @@ class NewUser extends Component {
         body: JSON.stringify({ name, email, password})
       })
       .then( response => {
-        console.log(response);
+        console.log(response)
         if(!response.ok) {
           this.setState({ error: 'Email already exist'})
         } else {
@@ -43,8 +43,8 @@ class NewUser extends Component {
             response.json().then(user => {
               login(user.data)
               this.props.fetchFavorites(user.data.id)
-            });
-            this.props.history.push('/');
+            })
+            this.props.history.push('/')
           })
         }
       })

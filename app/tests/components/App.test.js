@@ -7,10 +7,16 @@ import App from '../../components/App/App.js'
 
 describe('App', () => {
 
-const wrapper = shallow(<App/>)
+  const mockUser = {
+    id: 1,
+    name: 'staci',
+    email: 'staci@gmail.com'
+  }
 
-('it should have four routes', () => {
-  expect(wrapper.find('Route').length).toBe(4)
-})
+
+  ('it should have four routes', () => {
+    const wrapper = shallow(<App/>)
+    expect(wrapper.find('Route').length).toBe(4)
+  })
 
 })

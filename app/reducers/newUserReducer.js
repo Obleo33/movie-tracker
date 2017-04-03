@@ -14,4 +14,4 @@ const newuser = (state = initialState , action) => {
   }
 }
 
-export default newuser;
+export default newuser
