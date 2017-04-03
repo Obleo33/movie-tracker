@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
 
-// import AppContainer from '../../app/componentsApp/AppContainer.js'
+import AppContainer from '../../components/App/AppContainer'
 import App from '../../components/App/App'
 
 const mockStore = configureMockStore()({
@@ -29,7 +29,7 @@ const setUp = () => {
   }
 }
 
-describe('App Container', () => {
+xdescribe('App Container', () => {
   const { Container, Component } = setUp()
 
   xit('should pass the appropriate props from state', () => {
@@ -38,11 +38,5 @@ describe('App Container', () => {
       name: 'staci',
       email: 'staci@gmail.com'
     })
-  })
-
-  xit('should pass down the appropriate actions creator props from state', () => {
-    expect(Object.keys(Component.props())).toContain(
-
-    )
   })
 })
