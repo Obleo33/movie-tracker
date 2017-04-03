@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Route, Link, NavLink } from 'react-router-dom'
 import NowShowingContainer from '../NowShowing/NowShowingContainer'
 import LoginContainer from '../Login/LoginContainer'
 import NewUserContainer from '../NewUser/NewUserContainer'
@@ -49,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

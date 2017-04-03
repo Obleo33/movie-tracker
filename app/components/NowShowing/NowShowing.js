@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Route, Link, NavLink } from 'react-router-dom'
 
 class NowShowing extends Component {
 
@@ -8,7 +8,7 @@ class NowShowing extends Component {
       const favFilms = this.props.favorites.map(film => film.movie_id)
       favFilms.includes(filmData.movie_id)? null: this.addFavorite(filmData)
     } else {
-      this.props.history.push('/login');
+      this.props.history.push('/login')
     }
   }
 
@@ -33,7 +33,7 @@ class NowShowing extends Component {
               <div className='film-card' key={film.id} ref={film.id}>
                 <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}/>
                 <button
-                    onClick={() => this.onClick(
+                  onClick={() => this.onClick(
                     { movie_id: film.id,
                       user_id: this.props.user.id,
                       title: film.title,
@@ -43,13 +43,13 @@ class NowShowing extends Component {
                       overview: film.overview }
                     )}
                     className="favorite-button button">FAVORITE</button>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
-}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )
+      }
+    }
 
-export default NowShowing;
+    export default NowShowing

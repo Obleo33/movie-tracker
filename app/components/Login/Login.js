@@ -19,44 +19,44 @@ class Login extends Component {
   }
 
   submitLogin() {
-    const { login, loginFailed, logOut } = this.props;
-    const { email, password } = this.state;
+    const { login, loginFailed, logOut } = this.props
+    const { email, password } = this.state
 
     if(!this.validateEmail(email)) {
       return this.setState({error: 'Please Enter A Valid Email'})
     } else {
-    fetch('http://localhost:3000/api/users', {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ email, password })
-    })
-    .then(response => {
-      if (!response.ok) {
-        this.setState({
-          error: 'Invalid Credentials'
-        });
-        throw Error('error message');
-      }
-      else {
-        response.json().then(user => {
-          login(user.data)
-          this.props.fetchFavorites(user.data.id)
-        });
-        this.props.history.push('/');
-      }
-    })
-    .catch(error => {
-      loginFailed(error);
-      alert('Incorrect login try again ')
-    });
+      fetch('http://localhost:3000/api/users', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => {
+        if (!response.ok) {
+          this.setState({
+            error: 'Invalid Credentials'
+          })
+          throw Error('error message')
+        }
+        else {
+          response.json().then(user => {
+            login(user.data)
+            this.props.fetchFavorites(user.data.id)
+          })
+          this.props.history.push('/')
+        }
+      })
+      .catch(error => {
+        loginFailed(error)
+        alert('Incorrect login try again ')
+      })
 
-    this.setState({
-      email: '',
-      password: '',
-      error: ''
-    })
+      this.setState({
+        email: '',
+        password: '',
+        error: ''
+      })
+    }
   }
-}
 
 
 
@@ -78,4 +78,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Login
