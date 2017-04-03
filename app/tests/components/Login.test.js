@@ -4,7 +4,7 @@ import fetchMock from 'fetch-mock'
 import { browserHistory } from 'react-router'
 import Login from '../../components/Login/Login.js'
 
-describe('Favorite Reducer', () => {
+describe('Login', () => {
 
   const mockUser = {
     data: {
@@ -17,6 +17,10 @@ describe('Favorite Reducer', () => {
   afterEach(() => {
     expect(fetchMock.calls().unmatched).toEqual([])
     fetchMock.restore()
+  })
+
+  xit('should display an error when the email is not valid', () => {
+
   })
 
   it('should display error when autentication fails', async (done) => {
@@ -50,8 +54,9 @@ describe('Favorite Reducer', () => {
     })
 
 
-  it('redirects to dashboard on successful login', async () => {
+  it('redirects to dashboard on successful login', async (done) => {
     const LoginComponent = shallow(<Login history={browserHistory}
+                                          login={jest.fn()}
                                           fetchFavorites={jest.fn()} />)
 
     spyOn(browserHistory, 'push')
@@ -87,8 +92,10 @@ describe('Favorite Reducer', () => {
 
     submitButton.simulate('click')
 
-    await Login.update()
+    await LoginComponent.update()
 
     expect(browserHistory.push).toHaveBeenCalledWith('/')
+
+    done()
   })
 })

@@ -30,7 +30,6 @@ class NewUser extends Component {
         body: JSON.stringify({ name, email, password})
       })
       .then( response => {
-        console.log(response)
         if(!response.ok) {
           this.setState({ error: 'Email already exist'})
         } else {
@@ -66,11 +65,11 @@ class NewUser extends Component {
         </nav>
         <h3>NEW USER SIGN-UP</h3>
         <div className="new-user-form">
-          <input value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>
-          <input value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
+          <input name='name' value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} type='text' placeholder='name'></input>
+          <input name='email' value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} type='email' placeholder='email'></input>
           <p className='errorMessage'>{this.state.error}</p>
-          <input value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
-          <button className='button' onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
+          <input name='password' value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} type='password' placeholder='password'></input>
+          <button className='submit-button button' onClick={this.newUser.bind(this)} type='submit'>Sign Up</button>
         </div>
       </div>
     )
