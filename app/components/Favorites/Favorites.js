@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class Favorites extends Component {
 
-componentDidMount() {
-  this.props.fetchFavorites(this.props.user.id)
-}
+  componentDidMount() {
+    this.props.fetchFavorites(this.props.user.id)
+  }
 
 
-removeFavorite(userId, filmId) {
-  this.props.fetchFavorites(this.props.user.id)
+  removeFavorite(userId, filmId) {
+    this.props.fetchFavorites(this.props.user.id)
 
-  fetch(`http://localhost:3000/api/users/${userId}/favorites/${filmId}`, {
-    method: "DELETE",
-    headers: {"Content-Type": "application/json"},
-  })
+    fetch(`http://localhost:3000/api/users/${userId}/favorites/${filmId}`, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"},
+    })
 
-  this.props.fetchFavorites(this.props.user.id)
-}
+    this.props.fetchFavorites(this.props.user.id)
+  }
 
   render() {
     const { favorites } = this.props
@@ -41,9 +41,9 @@ removeFavorite(userId, filmId) {
           }) : null }
 
 
-      </div>
-    )
+        </div>
+      )
+    }
   }
-}
 
-export default Favorites;
+  export default Favorites

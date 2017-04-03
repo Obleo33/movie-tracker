@@ -10,19 +10,18 @@ const initialState = {
 
 describe('loginReducer', () => {
 
-it('should return inital state by default', () => {
-  expect(user(undefined, {})).toEqual(initialState)
+  it('should return inital state by default', () => {
+    expect(user(undefined, {})).toEqual(initialState)
+  })
+
+  it('should return a user object when the action is login', () => {
+    const mockUser = { id: 1, name: 'Bob', email: 'foo@bar.com', loggedIn: true}
+
+    expect(user(initialState, {
+      type: 'LOGIN',
+      user: mockUser
+    })).toEqual(mockUser)
+  })
+
+
 })
-
-it('should return a user object when the action is login', () => {
-  const mockUser = { id: 1, name: 'Bob', email: 'foo@bar.com', loggedIn: true};
-
-  expect(user(initialState, {
-    type: 'LOGIN',
-    user: mockUser
-  })).toEqual(mockUser);
-})
-
-
-})
-
