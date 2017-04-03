@@ -91,7 +91,7 @@ describe('actions', () => {
     expect(createdAction[0]).toEqual(expectedAction)
   })
 
-  it('creates getFilms when initiating fetchFilms action', () => {
+  xit('creates getFilms when initiating fetchFilms action', () => {
     let expectedAction = { type: 'fetchFilms', movies: mockData.movies}
     store.dispatch(fetchFilms(mockData.movies))
 
