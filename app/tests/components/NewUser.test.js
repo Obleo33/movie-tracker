@@ -1,11 +1,3 @@
-describe('Favorite Reducer', () => {
-
-  it.skip('test sshould go here', () => {
-  })
-})
-
-
-
 import React from 'react'
 import { shallow } from 'enzyme'
 import fetchMock from 'fetch-mock'
@@ -77,10 +69,16 @@ describe('NewUser', () => {
     })
 
 
-  it('redirects to dashboard on successful login', async (done) => {
+  it('redirects to dashboard on successful login', async () => {
     const NewUserComponent = shallow(<NewUser history={browserHistory} />)
 
     spyOn(browserHistory, 'push')
+
+    fetchMock.post('http://localhost:3000/api/users/new', {
+      status: 200,
+      ok: true,
+      body: mockUser
+    })
 
     fetchMock.post('http://localhost:3000/api/users', {
       status: 200,
@@ -125,6 +123,5 @@ describe('NewUser', () => {
 
     expect(browserHistory.push).toHaveBeenCalledWith('/')
 
-    done()
   })
 })
