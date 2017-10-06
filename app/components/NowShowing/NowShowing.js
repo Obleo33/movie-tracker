@@ -20,7 +20,6 @@ class NowShowing extends Component {
     }).then(this.props.fetchFavorites(this.props.user.id))
   }
 
-
   render() {
     return(
       <div className='nowshowing-container'>

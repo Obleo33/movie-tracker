@@ -2,6 +2,8 @@
   display         : flex;
   flex-wrap       : wrap;
   justify-content : space-around;
+  align-items: center;
+  width: 80%;
 }
 
 .film-card {
@@ -14,7 +16,7 @@
 }
 
 .film-card img {
-  width      : 200px;
+  width      : 250px;
   margin     : 10px 0px;
   transition : all .5s ease-in-out;
 }
@@ -22,6 +24,12 @@
 .film-card img:hover {
   transform  : scale(1.05);
   transition : all .5s ease-in-out;
+}
+
+.nowshowing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nowshowing-container nav {

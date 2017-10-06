@@ -38,7 +38,7 @@ class App extends Component {
       <div>
         <header className="app-header">
           {this.userInfo()}
-          <h1>MY FLICKSTER BOOK</h1>
+          <h1>MovingShadows</h1>
         </header>
         <Route exact path='/' component={ NowShowingContainer }/>
         <Route path='/login' render= { ({ match, location, history}) => <LoginContainer history={history} /> }/>

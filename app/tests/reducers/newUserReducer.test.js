@@ -21,4 +21,5 @@ describe ('new user reducer', () => {
       mockUser
     })).toEqual(mockUser)
   })
+  
 })

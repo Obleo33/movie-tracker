@@ -91,16 +91,14 @@ describe('actions', () => {
     expect(createdAction[0]).toEqual(expectedAction)
   })
 
-  xit('creates getFilms when initiating fetchFilms action', () => {
-    let expectedAction = { type: 'fetchFilms', movies: mockData.movies}
-    store.dispatch(fetchFilms(mockData.movies))
+  it.only('creates getFilms when initiating fetchFilms action', () => {
+    let expectedAction = { type: 'GET_FILMS', films: mockData.movies}
+    // actions.fetchFilms()
 
-    let createdAction = store.getActions()
+    // let createdAction = store.getActions()
 
-    expect(createdAction[0].toEqual(expectedAction))
-    expect(createdAction.length).toEqual(1)
+    expect(actions.fetchFilms()).toEqual(expectedAction)
+    // expect(createdAction.length).toEqual(1)
   })
-
-
 
 })
