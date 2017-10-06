@@ -1,60 +1,72 @@
 body {
-  color            : #2E86AB;
-  background-color : #0A0908;
-  font-family      : 'Advent Pro',
-                     sans-serif;
+    font-family: 'Advent Pro',
+    sans-serif;
+
+    color: #2e86ab;
+    background-color: #0a0908;
 }
 
 .loggedIn {
-  position  : absolute;
-  top       : 10px;
-  right     : 10px;
-  font-size : 14px;
+    font-size: 14px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .app-header {
-  margin     : 10px 0;
-  color      : #2E86AB;
-  text-align : center;
+    margin: 10px 0;
+
+    text-align: center;
+
+    color: #2e86ab;
 }
 
 .app-header h1 {
-  font-size   : 40px;
-  font-weight : 900;
-  margin      : 30px 10px 0 10px;
+    font-size: 40px;
+    font-weight: 900;
+
+    margin: 30px 10px 0 10px;
 }
 
 .login-link {
-  color : #2E86AB;
+    color: #2e86ab;
 }
 
 .logout-button {
-  color           : #2E86AB;
-  border          : none;
-  background      : none;
-  text-decoration : underline;
-  font-size       : 12px;
-  font-weight     : 100;
-  cursor          : pointer;
+    font-size: 12px;
+    font-weight: 100;
+
+    cursor: pointer;
+    text-decoration: underline;
+
+    color: #2e86ab;
+    border: none;
+    background: none;
 }
 
 .navlink {
-  margin : 10px;
-  color  : #2E86AB;
+    margin: 10px;
+
+    color: #2e86ab;
 }
 
 .button {
-  display          : block;
-  width            : 150px;
-  margin-bottom    : 10px;
-  padding          : 5px;
-  color            : #2E86AB;
-  border           : none;
-  background-color : #31393C;
-  font-family      : 'Abel',
-                     sans-serif;
-  font-size        : 15px;
-  font-weight      : 100;
-  letter-spacing   : 2px;
-  cursor           : pointer;
+    font-family: 'Abel',
+    sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+
+    display: block;
+
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    cursor: pointer;
+    letter-spacing: 2px;
+
+    color: #2e86ab;
+    border: none;
+    background-color: #31393c;
 }
