@@ -1,1 +1,3 @@
-web: node ./src/sql/app.js
+web: node ./src/app.js
+
+
