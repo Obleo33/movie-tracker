@@ -24,7 +24,7 @@ class NewUser extends Component {
     if(!this.validateEmail(email)) {
       return this.setState({error: 'Please Enter A Valid Email'})
     } else {
-      fetch('http://localhost:3000/api/users/new', {
+      fetch('/api/users/new', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email, password})
@@ -33,7 +33,7 @@ class NewUser extends Component {
         if(!response.ok) {
           this.setState({ error: 'Email already exist'})
         } else {
-          fetch('http://localhost:3000/api/users', {
+          fetch('/api/users', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({ email, password })

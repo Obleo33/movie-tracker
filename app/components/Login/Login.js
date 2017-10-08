@@ -25,7 +25,7 @@ class Login extends Component {
     if(!this.validateEmail(email)) {
       return this.setState({error: 'Please Enter A Valid Email'})
     } else {
-      fetch('http://localhost:3000/api/users', {
+      fetch('/api/users', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ email, password })

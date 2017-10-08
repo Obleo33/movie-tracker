@@ -13,7 +13,7 @@ export const fetchFilms = () => {
 export const fetchFavorites = (userId) => {
 
   return dispatch => {
-    fetch(`http://localhost:3000/api/users/${userId}/favorites`)
+    fetch(`/api/users/${userId}/favorites`)
     .then((response) => response.json())
     .then((userFav) => {
       dispatch(getFavorites(userFav.data))

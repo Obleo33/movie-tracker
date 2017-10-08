@@ -13,7 +13,7 @@ class NowShowing extends Component {
   }
 
   addFavorite(filmData){
-    fetch(`http://localhost:3000/api/users/favorites/new`, {
+    fetch(`/api/users/favorites/new`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify( filmData )
