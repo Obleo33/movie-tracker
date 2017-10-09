@@ -1,9 +1,9 @@
 {
   "name": "example-api",
   "version": "1.0.0",
-  "description": "MeatMeet",
+  "description": "MovingShadows",
   "scripts": {
-    "build": "webpack --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.prod.config.js",
     "dev-server": "webpack-dev-server --hot --inline --content-base --history-api-fallback",
     "start": "npm build && node server.js",
     "test": "jest"

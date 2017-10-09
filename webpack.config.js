@@ -8,10 +8,10 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-     path: path.join(__dirname, 'app'),
-     filename: 'bundle.js',
-     publicPath: '/app/'
-   },
+    path: __dirname,
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
   module: {
     loaders: [
       {
