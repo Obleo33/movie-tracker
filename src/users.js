@@ -1,6 +1,7 @@
 var express = require('express');
-var router = express.Router();
 var db = require('./queries');
+
+var router = express.Router();
 
 router.get('/users', db.getAllUsers)
 router.post('/users', db.signIn) // must have a body with email and password

@@ -86,9 +86,6 @@ function deleteFavorite(req, res, next) {
   })
 }
 
-
-
-
 module.exports = {
   getAllUsers: getAllUsers,
   signIn: signIn,
