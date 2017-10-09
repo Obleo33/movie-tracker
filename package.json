@@ -1,7 +1,7 @@
 {
-  "name": "example-api",
+  "name": "MovingShadows",
   "version": "1.0.0",
-  "description": "MovingShadows",
+  "description": "New movie tracker",
   "scripts": {
     "build": "webpack --config ./webpack.prod.config.js",
     "dev-server": "webpack-dev-server --hot --inline --content-base --history-api-fallback",
