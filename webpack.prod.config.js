@@ -8,7 +8,7 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    path: __dirname,
+    path: path.join(__dirname, 'app'),
     filename: 'bundle.js',
     publicPath: '/app/'
   },
@@ -24,7 +24,8 @@ module.exports = {
         }
       },
       { test: /\.css$/, loader: 'style!css' },
-      { test: /\.scss$/, loader: 'style!css!sass' }
+      { test: /\.scss$/, loader: 'style!css!sass' },
+      { test: /\.svg$/, loader: 'svg-url-loader' }
     ]
   },
   resolve: {
